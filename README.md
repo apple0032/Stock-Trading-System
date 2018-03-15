@@ -5,7 +5,39 @@ Stock-Trading-System
   <img src="https://image.ibb.co/jxp29c/11.png">
 </p>
 
+The Stock System is a Yii2 based simulation of Hong Kong stock trading system. 
+It takes the real price of stocks in Hong Kong market, simulate the trading
+action, manage the storage, and also analyze the information that the system collected.
+My purpose of doing this project is to increase the profit of my investment behaviour. 
 
+
+UI && Function
+-------
+* Simulation of trading HK stock
+<img src="https://image.ibb.co/i6wSaH/trade.png">
+
+* Check the details & history of your tradings
+<img src="https://image.ibb.co/iQOZNx/history.png">
+
+* Analyze your investment portfolio through chart & table
+<img src="https://image.ibb.co/mMPDFH/storage.png">
+
+* Full Support of searching <b>REAL TIME PRICE</b> of HK stock and international market
+index.
+<img src="https://image.ibb.co/kzkQUc/market.png">
+<img src="https://image.ibb.co/gcG4Nx/search.png">
+
+<br>
+
+DEMO
+-----
+<a href="http://stonesgaming.com">http://stonesgaming.com</a>
+* username : demo / password : demo
+
+<br>
+<b>Note: All of the investment actions in this web pages are only under simulation.</b>
+
+<br>
 
 Resources
 -----------
@@ -50,10 +82,9 @@ Resources
 * <a href="https://canvasjs.com/php-charts/">CanvasJS</a>
 
 
+### Stock Information API
 
-
-
-
+* Sorry! Based on copyright issues, I cannot provide this file in github.
 
 
 
