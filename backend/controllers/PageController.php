@@ -85,8 +85,9 @@ class PageController extends Controller
 
         //最近一次交易
         $trade = History::find()->select('date')->where(['user_id' => Yii::$app->user->identity->id])->orderBy('amount asc')->one();
-        $trade = $trade->date;
-
+        if($trade) {
+            $trade = $trade->date;
+        }
 
         return $this->render('home', [
             'cash_balance' => $cash_balance,
