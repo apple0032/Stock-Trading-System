@@ -136,7 +136,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'value' => function($model)  {
 
                             $current_price = Stock::GetStockPrice($model->stock_code);
-                            $current_price = '<a href="">'.$current_price.'</a>';
+                            $current_price = '<a href="/admin/search?Buy%5Bcode%5D='.$model->stock_code.'">' . $current_price . '</a>';
 
                             return $current_price;
                         }
@@ -194,6 +194,17 @@ $this->params['breadcrumbs'][] = $this->title;
                             $type = $stock_type_list[$model->type];
 
                             return $type;
+                        }
+                    ],
+
+                    $columns[] = [
+                        'label' => '沽出',
+                        'format' => 'raw',
+                        'value' => function($model)  {
+
+                        $sell = '<div style="text-align: center; font-size: 20px"><a href="/admin/sell/index?sell='.$model->stock_code.'"><i class="fas fa-times-circle"></i></a></div>';
+
+                            return $sell;
                         }
                     ],
 

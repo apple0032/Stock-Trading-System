@@ -90,6 +90,8 @@ $this->title = '交易紀錄';
                 'value' => function($model)  {
                     if($model->status == 1){
                         $status = '全數成交';
+                    } else {
+                        $status = '取消';
                     }
                     return $status;
                 }

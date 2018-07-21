@@ -10,6 +10,16 @@ It takes the real price of stocks in Hong Kong market, simulate the trading
 action, manage the storage, and also analyze the information that the system collected.
 My purpose of doing this project is to increase the profit of my investment behaviour. 
 
+Update
+-------
+* Version 1.1
+- 各項錯誤/代碼修正
+- 現在股價等於或低於0.01時,股價將被設定為0(為處理衍生工具被殺的BUG)
+- 現在可於"存倉列表"中,所持股份的右方直接點擊沽出股份,然後直接被帶到沽出頁面進行操作
+- 現在於沽出頁面輸入股份號碼之後,系統會從數據庫中提取用戶當前持股量,並預設沽出數目為全部所持股份
+- 衍生工具被系統發現為"被殺"(其參考市值及市場價為0)時, 則不論存倉列表或分析圖表的市值均為0 (存倉列表不會移除市值為0的股份)
+- 主頁各參數修正
+
 
 UI && Function
 -------

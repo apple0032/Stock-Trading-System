@@ -130,6 +130,10 @@ class SellController extends Controller
                 return false;
             }
 
+            if($model->total == 0){
+                return false;
+            }
+
             $new_amount = $model_storage->amount - $model->amount;
 
             Yii::$app->db->createCommand() //更改股數
@@ -179,7 +183,19 @@ class SellController extends Controller
         $uaCode = Stock::GetStockInfo($stock)['uaCode'];
 
 
-        return ['stock' => $stock ,'price' => $price, 'name' => $name, 'lotsize' => $lotsize, 'uaCode' => $uaCode];
+        $storage = Storage::find()
+            ->where(['user_id' => Yii::$app->user->identity->id])
+            ->andWhere(['stock_code' => $stock])
+            ->asArray()
+            ->one();
+
+        if($storage){
+            $own = $storage['amount'];
+        } else {
+            $own = 0;
+        }
+
+        return ['own' => $own, 'stock' => $stock ,'price' => $price, 'name' => $name, 'lotsize' => $lotsize, 'uaCode' => $uaCode];
     }
 
 

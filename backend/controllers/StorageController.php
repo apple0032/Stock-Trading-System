@@ -65,6 +65,7 @@ class StorageController extends Controller
         $total_value = 0;
 
         for($i=0; $i< count($storage); $i++){
+            $dataPoints[$i]['type'] = $storage[$i]['type'];
             $dataPoints[$i]['label'] = $storage[$i]['stock_string'];
             $dataPoints[$i]['amount'] = $storage[$i]['amount'];
             $dataPoints[$i]['price'] = Stock::GetStockPrice($storage[$i]['stock_code']);

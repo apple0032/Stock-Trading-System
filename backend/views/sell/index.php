@@ -3,6 +3,14 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$request = Yii::$app->request;
+$sell = $request->get('sell');
+
+if(!$sell){
+    $sell = 0;
+}
+
+$sell = json_encode($sell);
 
 $this->title = '沽出證券';
 //$this->params['breadcrumbs'][] = $this->title;
@@ -142,11 +150,18 @@ $js = <<<JS
         $(".skin-blue").toggleClass("sidebar-open");
     });
 
+    var sell = $sell;
+    if(sell != 0){
+        getstockinfo(sell);
+    }
 
     $('#buy-code').change(function(){
         var stock = $(this).val();
-        
-        
+
+        getstockinfo(stock);
+    });
+    
+    function getstockinfo(stock) {
         $.ajax({
             url: 'getstockinfo',
             type: 'post',
@@ -161,8 +176,9 @@ $js = <<<JS
                     $('#buy-current_price').val(data['price']);
                     $('#buy-lotsize').val(data['lotsize']);
                     $('#buy-stock_type').val(data['uaCode']);
+                    $('#buy-amount').val(data['own']);
                 } else {
-                    alert('系統沒有此證券。');
+                    alert('系統尋找不到此證券。');
                     $('#buy-code').val('');
                     $('#buy-name').val('');
                     $('#buy-current_price').val('');
@@ -171,7 +187,9 @@ $js = <<<JS
                 }
             }
         });
-    });
+    }
+    
+    
 
     $('#buy-amount').change(function(){
         var amount = $(this).val();
