@@ -12,7 +12,7 @@ My purpose of doing this project is to increase the profit of my investment beha
 
 Update
 -------
-* Version 1.1
+Version 1.1 (2018-07-22)
 - 各項錯誤/代碼修正
 - 現在股價等於或低於0.01時,股價將被設定為0(為處理衍生工具被殺的BUG)
 - 現在可於"存倉列表"中,所持股份的右方直接點擊沽出股份,然後直接被帶到沽出頁面進行操作
