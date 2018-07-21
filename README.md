@@ -47,7 +47,7 @@ DEMO
 <br>
 <b>Note: All of the investment actions in this web pages are only under simulation.</b>
 
-<br>
+<br><br>
 
 Resources
 -----------
