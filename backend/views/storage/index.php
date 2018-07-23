@@ -110,8 +110,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             if($model->had_sell != '1') {
                                 $average = History::find()->where(['user_id' => Yii::$app->user->identity->id])
-                                    ->andWhere(['status' => 1])//仲有貨
                                     ->andWhere(['stock_code' => $model->stock_code])
+                                    ->andWhere(['is_buy' => 1]) //是買
+                                    ->andWhere(['status' => 1])//仲有貨
                                     ->asArray()->all();
 
                                 $average_price = 0;

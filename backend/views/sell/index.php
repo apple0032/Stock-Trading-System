@@ -153,12 +153,16 @@ $js = <<<JS
     var sell = $sell;
     if(sell != 0){
         getstockinfo(sell);
+        
+        setTimeout(function(){ sumamount(); }, 500);
+
     }
 
     $('#buy-code').change(function(){
         var stock = $(this).val();
 
         getstockinfo(stock);
+     
     });
     
     function getstockinfo(stock) {
@@ -189,7 +193,17 @@ $js = <<<JS
         });
     }
     
-    
+    function sumamount() {
+        var amount = $('#buy-amount').val();
+        var lotsize = $('#buy-lotsize').val();
+        var current_price = $('#buy-current_price').val();
+        
+        var total = 0;
+        total = amount * current_price;
+        total = Math.ceil(total);
+        $('#buy-total').val(total);
+            
+    }
 
     $('#buy-amount').change(function(){
         var amount = $(this).val();

@@ -5,13 +5,32 @@ Stock-Trading-System
   <img src="https://image.ibb.co/jxp29c/11.png">
 </p>
 
+Introduction
+-------
 The Stock System is a Yii2 based simulation of Hong Kong stock trading system. 
 It takes the real price of stocks in Hong Kong market, simulate the trading
 action, manage the storage, and also analyze the information that the system collected.
 My purpose of doing this project is to increase the profit of my investment behaviour. 
 
-Update
+Updates
 -------
+Version 1.2 (2018-07-24)
+- 各項錯誤/代碼修正
+- 修正買入證券時計算平均買入價的錯誤
+- 修正從存倉被帶到沽出證券頁面時總金額沒有自動計算的錯誤
+- 修正存倉列表平均買入價的顯示錯誤
+- 現在右則搜尋欄可以直接搜尋證券了
+- <b>新功能 - 收藏(Collection)</b>
+    <img src="https://image.ibb.co/ftDxMy/book.png">
+    * 現在於查詢證券頁面或右則搜尋欄搜尋證券後，可於右則點選收藏證券，然後於收藏列表查閱
+    * 每種證券只能收藏一次，收藏之後可再點擊un-bookmark
+    * 可於收藏列表右則點"從收藏移除"直接從列表移除收藏
+    * 可於列表上方"新增證券"直接加入到收藏列表
+    * 現在不論點擊新增收藏或移除收藏，左下則會有彈出提示
+    * 以上動作均採用ajax編寫，故點擊之後系統會直接操作，不須更新頁面
+
+
+
 Version 1.1 (2018-07-22)
 - 各項錯誤/代碼修正
 - 現在股價等於或低於0.01時,股價將被設定為0(為處理衍生工具被殺的BUG)
@@ -21,7 +40,7 @@ Version 1.1 (2018-07-22)
 - 主頁各參數修正
 
 
-UI && Function
+UI && Functions
 -------
 * Simulation of trading HK stock
 <img src="https://image.ibb.co/i6wSaH/trade.png">
